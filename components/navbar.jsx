@@ -73,7 +73,7 @@ export default function Navbar({ activeSection }) {
         </div>
 
         <motion.a
-          href="/resume.pdf"
+          href="https://drive.google.com/file/d/1hi1vX8Z5mPVET2M6m1YyPhTjJA_4vczB/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
           whileHover={{

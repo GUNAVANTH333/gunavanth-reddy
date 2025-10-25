@@ -41,7 +41,7 @@ export default function Contact() {
               Send Email
             </motion.a>
             <motion.a
-              href="#"
+              href="https://drive.google.com/file/d/1hi1vX8Z5mPVET2M6m1YyPhTjJA_4vczB/view?usp=sharing"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 20px 40px rgba(0, 217, 255, 0.2)",
