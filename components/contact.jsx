@@ -13,13 +13,13 @@ export default function Contact() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-balance">
-            Let's <span className="text-accent">Connect</span>
+            Let&apos;s <span className="text-accent">Connect</span>
           </h2>
 
           <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto text-balance font-body">
-            I'm always interested in hearing about new projects and
-            opportunities. Feel free to reach out if you'd like to collaborate
-            or just say hello!
+            I&apos;m always interested in hearing about new projects and
+            opportunities. Feel free to reach out if you&apos;d like to
+            collaborate or just say hello!
           </p>
 
           <motion.div

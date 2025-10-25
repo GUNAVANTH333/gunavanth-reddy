@@ -42,7 +42,7 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-5xl md:text-7xl font-display font-bold mb-4 text-balance">
-            Hey, I'm <span className="text-accent"> Gunavanth</span>
+            Hey, I&apos;m <span className="text-accent"> Gunavanth</span>
           </h1>
         </motion.div>
 

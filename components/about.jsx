@@ -18,24 +18,25 @@ export default function About() {
 
           <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
             <p>
-              I'm a passionate full-stack developer with a love for creating
-              beautiful, performant web experiences. With expertise in modern
-              JavaScript frameworks and cloud technologies, I transform ideas
-              into elegant solutions.
+              I&apos;m a passionate full-stack developer with a love for
+              creating beautiful, performant web experiences. With expertise in
+              modern JavaScript frameworks and cloud technologies, I transform
+              ideas into elegant solutions.
             </p>
 
             <p>
               My journey in web development started with a curiosity about how
-              things work on the internet. Over the years, I've honed my skills
-              in building scalable applications, optimizing performance, and
-              crafting intuitive user interfaces that users love.
+              things work on the internet. Over the years, I&apos;ve honed my
+              skills in building scalable applications, optimizing performance,
+              and crafting intuitive user interfaces that users love.
             </p>
 
             <p>
-              When I'm not coding, you'll find me exploring new technologies,
-              contributing to open-source projects, or sharing knowledge with
-              the developer community. I believe in continuous learning and
-              pushing the boundaries of what's possible on the web.
+              When I&apos;m not coding, you&apos;ll find me exploring new
+              technologies, contributing to open-source projects, or sharing
+              knowledge with the developer community. I believe in continuous
+              learning and pushing the boundaries of what&apos;s possible on the
+              web.
             </p>
           </div>
         </motion.div>
