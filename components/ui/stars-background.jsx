@@ -57,7 +57,6 @@ export const StarsBackground = ({
 
     updateStars();
 
-    // Use window resize for simplicity, or keep the ResizeObserver if preferred.
     window.addEventListener("resize", updateStars);
 
     return () => {

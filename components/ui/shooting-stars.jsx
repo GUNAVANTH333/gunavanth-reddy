@@ -3,7 +3,6 @@ import { cn } from "@/lib/utils";
 import React, { useEffect, useState, useRef } from "react";
 
 const getRandomStartPoint = () => {
-  // Ensure window exists before accessing its properties (standard safety)
   if (typeof window === "undefined") {
     return { x: 0, y: 0, angle: 45 };
   }
@@ -30,7 +29,7 @@ const getRandomStartPoint = () => {
 };
 
 export const ShootingStars = ({
-  minSpeed = 5, // Reduced speed for better visibility
+  minSpeed = 5,
   maxSpeed = 15,
   minDelay = 1200,
   maxDelay = 4200,
@@ -43,7 +42,6 @@ export const ShootingStars = ({
   const [star, setStar] = useState(null);
   const svgRef = useRef(null);
 
-  // 1. Star Generation Loop
   useEffect(() => {
     let timeoutId;
 
@@ -66,10 +64,9 @@ export const ShootingStars = ({
 
     createStar();
 
-    return () => clearTimeout(timeoutId); // Cleanup timeout
+    return () => clearTimeout(timeoutId);
   }, [minSpeed, maxSpeed, minDelay, maxDelay]);
 
-  // 2. Star Movement Loop
   useEffect(() => {
     let animationFrame;
 
@@ -87,14 +84,13 @@ export const ShootingStars = ({
           prevStar.y +
           prevStar.speed * Math.sin((prevStar.angle * Math.PI) / 180);
 
-        // Star disappears once it exits the screen bounds
         if (
           newX < -200 ||
           newX > window.innerWidth + 200 ||
           newY < -200 ||
           newY > window.innerHeight + 200
         ) {
-          return null; // Stop tracking this star
+          return null;
         }
 
         return {
@@ -102,7 +98,7 @@ export const ShootingStars = ({
           x: newX,
           y: newY,
           distance: prevStar.distance + prevStar.speed,
-          scale: 1, // Removed dynamic scale as it often causes jitter
+          scale: 1,
         };
       });
 
@@ -111,7 +107,7 @@ export const ShootingStars = ({
 
     animationFrame = requestAnimationFrame(moveStar);
     return () => cancelAnimationFrame(animationFrame);
-  }, [star]); // Reruns movement every time 'star' state changes (i.e., every frame)
+  }, [star]);
 
   return (
     <svg
@@ -120,12 +116,9 @@ export const ShootingStars = ({
         "w-full h-full absolute inset-0 z-10 pointer-events-none",
         className
       )}
-      // Added overflow: visible to ensure stars that start just off-screen are seen
       style={{ overflow: "visible" }}
     >
       {star && (
-        // 🚨 CRITICAL FIX: The <defs> block must be inside the star conditional rendering
-        // and use a unique ID, or the browser won't draw the gradient correctly.
         <g key={star.id}>
           <defs>
             <linearGradient
@@ -150,7 +143,6 @@ export const ShootingStars = ({
             y={star.y}
             width={starWidth * star.scale}
             height={starHeight}
-            // Use the unique ID here
             fill={`url(#gradient-${star.id})`}
             transform={`rotate(${star.angle}, ${
               star.x + (starWidth * star.scale) / 2
