@@ -21,8 +21,12 @@ export default function Hero() {
   }, []);
 
   const socialLinks = [
-    { icon: "GitHub", url: "#", label: "GitHub" },
-    { icon: "LinkedIn", url: "#", label: "LinkedIn" },
+    { icon: "GitHub", url: "https://github.com/GUNAVANTH333", label: "GitHub" },
+    {
+      icon: "LinkedIn",
+      url: "https://www.linkedin.com/in/chilukala-gunavanth-reddy-48093471/",
+      label: "LinkedIn",
+    },
     { icon: "Email", url: "mailto:hello@example.com", label: "Email" },
   ];
 
@@ -73,6 +77,8 @@ export default function Hero() {
             <a
               key={link.label}
               href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-12 h-12 rounded-full border border-accent/30 flex items-center justify-center text-accent hover:bg-accent/10 hover:border-accent transition-all duration-300 interactive"
               aria-label={link.label}
             >

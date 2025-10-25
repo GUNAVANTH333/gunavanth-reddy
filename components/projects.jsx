@@ -8,33 +8,50 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "Grow Habit",
       description:
-        "A full-stack e-commerce solution with real-time inventory management, payment processing, and admin dashboard.",
-      tags: ["Next.js", "React", "Stripe", "PostgreSQL"],
+        "A simple and intuitive web app for tracking daily habits and managing to-do lists to improve productivity.",
+      tags: ["React", "HTML", "CSS"],
+      link: "https://grow-habit-mu.vercel.app/",
+      gradient: "from-cyan-500/20 to-blue-500/20",
+      image: "/GrowHabit.png",
+    },
+    {
+      id: 4,
+      title: "Portfolio",
+      description:
+        "A modern, responsive personal portfolio website showcasing projects, skills, and professional achievements with an engaging and user-friendly design.",
+      tags: [
+        "React",
+        "Next.js",
+        "HTML",
+        "Tailwind CSS",
+        "Aceternity",
+        "Framer Motion",
+      ],
       link: "#",
       gradient: "from-cyan-500/20 to-blue-500/20",
-      image: "/ecommerce-platform-dashboard-with-products.jpg",
+      image: "/Portfolio.png",
     },
     {
       id: 2,
-      title: "Task Management App",
+      title: "Famous Inventors",
       description:
-        "Collaborative task management tool with real-time updates, team workspaces, and advanced filtering capabilities.",
-      tags: ["React", "Firebase", "Tailwind CSS", "TypeScript"],
-      link: "#",
+        "Explore the achievements of famous inventors, learn about their groundbreaking inventions, and see how they accelerated technological progress.",
+      tags: ["HTML", "CSS"],
+      link: "https://famousinventors.netlify.app/",
       gradient: "from-purple-500/20 to-pink-500/20",
-      image: "/project2.png",
+      image: "/FamousInventors.png",
     },
     {
       id: 3,
-      title: "AI Content Generator",
+      title: "Whack-A-Mole",
       description:
-        "Intelligent content generation platform powered by AI, featuring batch processing and customizable templates.",
-      tags: ["Next.js", "OpenAI", "Node.js", "MongoDB"],
-      link: "#",
+        "A fast-paced arcade game where players hit popping moles as quickly as possible to score points before time runs out.",
+      tags: ["JavaScript", "HTML", "CSS"],
+      link: "https://whack-a-mole12.netlify.app/",
       gradient: "from-cyan-500/20 to-purple-500/20",
-      image: "/ai-content-generator-interface-with-text-editor.jpg",
+      image: "/WhackAMole.png",
     },
   ];
 
@@ -96,10 +113,12 @@ export default function Projects() {
             WebkitOverflowScrolling: "touch",
           }}
         >
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <motion.a
               key={project.id}
               href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
               variants={itemVariants}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
               className="group relative flex-shrink-0 w-full md:w-[500px] overflow-hidden rounded-2xl border border-white/10 transition-all duration-300 hover:border-accent/50 snap-center cursor-pointer my-6 interactive"
