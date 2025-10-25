@@ -23,7 +23,7 @@ export const StarsBackground = ({
         return {
           x: Math.random() * width,
           y: Math.random() * height,
-          radius: Math.random() * 0.8 + 0.8,
+          radius: Math.random() * 0.05 + 0.8,
           opacity: Math.random() * 0.5 + 0.7,
           twinkleSpeed: shouldTwinkle
             ? minTwinkleSpeed +
@@ -57,10 +57,15 @@ export const StarsBackground = ({
 
     updateStars();
 
-    window.addEventListener("resize", updateStars);
+    const resizeObserver = new ResizeObserver(updateStars);
+    if (canvasRef.current) {
+      resizeObserver.observe(canvasRef.current);
+    }
 
     return () => {
-      window.removeEventListener("resize", updateStars);
+      if (canvasRef.current) {
+        resizeObserver.unobserve(canvasRef.current);
+      }
     };
   }, [
     starDensity,
@@ -108,7 +113,7 @@ export const StarsBackground = ({
   return (
     <canvas
       ref={canvasRef}
-      className={cn("h-full w-full absolute inset-0 -z-10", className)}
+      className={cn("h-full w-full absolute inset-0", className)}
     />
   );
 };

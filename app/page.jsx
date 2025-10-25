@@ -8,6 +8,7 @@ import About from "@/components/about";
 import Projects from "@/components/projects";
 import Skills from "@/components/skills";
 import Contact from "@/components/contact";
+import { ShootingStars } from "@/components/ui/shooting-stars";
 import { StarsBackground } from "@/components/ui/stars-background";
 
 export default function Home() {
@@ -62,6 +63,7 @@ export default function Home() {
       {!isLoading && (
         <div className="transition-all duration-700 ease-in-out opacity-100">
           <StarsBackground />
+          <ShootingStars />
           <Navbar activeSection={activeSection} />
           <Hero />
           <About />
