@@ -8,9 +8,8 @@ export function LoadingScreen({ name = "YourName", onComplete = () => {} }) {
 
   const handleDecryptComplete = () => {
     setTimeout(() => {
-      setIsFadingOut(true);
-      setTimeout(onComplete, 100);
-    }, 800);
+      setTimeout(onComplete, 10);
+    }, 500);
   };
 
   return (
@@ -20,7 +19,7 @@ export function LoadingScreen({ name = "YourName", onComplete = () => {} }) {
       }`}
       style={{ fontFamily: "'Rubik Doodle Shadow', system-ui" }}
     >
-      <div className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-600 text-4xl md:text-6xl tracking-wider">
+      <div className="text-transparent tracking-wider bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-600 text-4xl md:text-6xl scale-120">
         <DecryptedText
           text={name}
           speed={50}
