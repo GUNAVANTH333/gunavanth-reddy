@@ -107,7 +107,7 @@ export default function Projects() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-none"
+          className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory custom-scroll"
           style={{
             scrollBehavior: "smooth",
             WebkitOverflowScrolling: "touch",
