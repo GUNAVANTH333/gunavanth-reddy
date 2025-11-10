@@ -53,6 +53,23 @@ export default function Projects() {
       gradient: "from-cyan-500/20 to-purple-500/20",
       image: "/WhackAMole.png",
     },
+    {
+      id: 4,
+      title: "CGPA-Analyzer (Under Development)",
+      description:
+        "A modern, full-stack web application for students to track their academic performance, calculate and predict CGPA, and manage semester grades efficiently.",
+      tags: [
+        "React",
+        "Tailwind CSS",
+        "Node.js",
+        "Express",
+        "Prisma",
+        "PostgreSQL",
+      ],
+      link: "https://github.com/GUNAVANTH333/CGPA-Analyzer",
+      gradient: "from-cyan-500/20 to-purple-500/20",
+      image: "/CGPA-Analyzer.png",
+    },
   ];
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });

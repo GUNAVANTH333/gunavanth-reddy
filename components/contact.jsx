@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-20 px-4">
-      <div className="max-w-4xl mx-auto text-center">
+    <section id="contact" className="py-20 px-4 relative">
+      <div className="max-w-4xl mx-auto text-center relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,18 +36,23 @@ export default function Contact() {
                 boxShadow: "0 20px 40px rgba(0, 217, 255, 0.3)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-accent text-background font-heading font-semibold rounded-lg hover:bg-accent/90 transition-all duration-300 shadow-lg btn-interactive"
+              className="relative z-[10001] px-8 py-3 border border-accent text-accent font-heading font-semibold rounded-lg hover:bg-accent/10 transition-all duration-300 btn-interactive"
+              style={{ pointerEvents: "auto" }}
             >
               Send Email
             </motion.a>
+
             <motion.a
               href="https://drive.google.com/file/d/1hi1vX8Z5mPVET2M6m1YyPhTjJA_4vczB/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0 20px 40px rgba(0, 217, 255, 0.2)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 border border-accent text-accent font-heading font-semibold rounded-lg hover:bg-accent/10 transition-all duration-300 btn-interactive"
+              className="relative z-[10001] px-8 py-3 border border-accent text-accent font-heading font-semibold rounded-lg hover:bg-accent/10 transition-all duration-300 btn-interactive"
+              style={{ pointerEvents: "auto" }}
             >
               View Resume
             </motion.a>
