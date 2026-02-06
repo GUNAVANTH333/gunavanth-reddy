@@ -7,6 +7,23 @@ import { useState } from "react";
 export default function Projects() {
   const projects = [
     {
+      id: 4,
+      title: "CGPA-Analyzer",
+      description:
+        "A modern, full-stack web application for students to track their academic performance, calculate and predict CGPA, and manage semester grades efficiently.",
+      tags: [
+        "React",
+        "Tailwind CSS",
+        "Node.js",
+        "Express",
+        "Prisma",
+        "PostgreSQL",
+      ],
+      link: "https://github.com/GUNAVANTH333/CGPA-Analyzer",
+      gradient: "from-cyan-500/20 to-purple-500/20",
+      image: "/CGPA-Analyzer.png",
+    },
+    {
       id: 1,
       title: "Grow Habit",
       description:
@@ -34,16 +51,6 @@ export default function Projects() {
       image: "/Portfolio.png",
     },
     {
-      id: 2,
-      title: "Famous Inventors",
-      description:
-        "Explore the achievements of famous inventors, learn about their groundbreaking inventions, and see how they accelerated technological progress.",
-      tags: ["HTML", "CSS"],
-      link: "https://famousinventors.netlify.app/",
-      gradient: "from-purple-500/20 to-pink-500/20",
-      image: "/FamousInventors.png",
-    },
-    {
       id: 3,
       title: "Whack-A-Mole",
       description:
@@ -52,23 +59,6 @@ export default function Projects() {
       link: "https://whack-a-mole12.netlify.app/",
       gradient: "from-cyan-500/20 to-purple-500/20",
       image: "/WhackAMole.png",
-    },
-    {
-      id: 4,
-      title: "CGPA-Analyzer (Under Development)",
-      description:
-        "A modern, full-stack web application for students to track their academic performance, calculate and predict CGPA, and manage semester grades efficiently.",
-      tags: [
-        "React",
-        "Tailwind CSS",
-        "Node.js",
-        "Express",
-        "Prisma",
-        "PostgreSQL",
-      ],
-      link: "https://github.com/GUNAVANTH333/CGPA-Analyzer",
-      gradient: "from-cyan-500/20 to-purple-500/20",
-      image: "/CGPA-Analyzer.png",
     },
   ];
 
