@@ -20,6 +20,7 @@ export default function Skills() {
     "Git",
     "Vercel",
     "Figma",
+    "Prisma ORM"
   ];
 
   const container = {
