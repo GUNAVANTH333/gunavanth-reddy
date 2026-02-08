@@ -18,6 +18,7 @@ export default function Projects() {
         "Express",
         "Prisma",
         "PostgreSQL",
+        "Prisma ORM",
       ],
       link: "https://github.com/GUNAVANTH333/CGPA-Analyzer",
       gradient: "from-cyan-500/20 to-purple-500/20",
