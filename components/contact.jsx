@@ -13,7 +13,7 @@ export default function Contact() {
           viewport={{ once: true }}
         >
           <h2 className="text-4xl md:text-5xl font-heading font-bold mb-6 text-balance">
-            Let&apos;s <span className="text-accent">Connect</span>
+            Let&apos;s <span className="text-accent">Connect With Me</span>
           </h2>
 
           <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto text-balance font-body">
