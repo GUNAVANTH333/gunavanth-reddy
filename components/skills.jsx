@@ -5,22 +5,26 @@ import { MovingBorderButton } from "@/components/ui/moving-border";
 
 export default function Skills() {
   const skills = [
-    "HTML",
-    "CSS",
+    "Python",
     "JavaScript",
     "TypeScript",
+    "HTML",
+    "CSS",
     "React",
     "Next.js",
     "Node.js",
     "Express",
-    "MongoDB",
-    "PostgreSQL",
     "Tailwind CSS",
     "Framer Motion",
+    "Prisma ORM",
+    "PostgreSQL",
+    "MySQL",
     "Git",
     "Vercel",
-    "Figma",
-    "Prisma ORM",
+    "LangChain",
+    "OAuth 2.0",
+    "Problem-Solving",
+    "Teamwork",
   ];
 
   const container = {
