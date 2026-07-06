@@ -7,7 +7,50 @@ import { useState } from "react";
 export default function Projects() {
   const projects = [
     {
-      id: 4,
+      id: 1,
+      title: "RawFeed",
+      description:
+        "A link-sharing discussion platform where each thread gives you an auto-generated pseudonym and avatar, keeping your identity consistent within a conversation but unlinkable across threads.",
+      tags: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS v4",
+        "Express",
+        "PostgreSQL",
+        "Prisma",
+        "JWT",
+        "Google OAuth",
+      ],
+      demoLink: "https://raw-feed.vercel.app/",
+      githubLink: "https://github.com/GUNAVANTH333/RawFeed",
+      gradient: "from-cyan-500/20 to-blue-500/20",
+      image: "/RawFeed.png",
+    },
+    {
+      id: 2,
+      title: "CineBook",
+      description:
+        "A cinema ticket booking platform with an interactive seat map, tiered pricing, and TTL-based seat locking to prevent double-booking, plus an admin dashboard for managing movies, screens, and shows.",
+      tags: [
+        "React 19",
+        "Vite",
+        "TypeScript",
+        "React Router v7",
+        "Node.js",
+        "Express.js",
+        "PostgreSQL",
+        "Prisma ORM",
+        "JWT",
+        "bcrypt",
+        "Zod",
+      ],
+      demoLink: "https://cinebookapp.vercel.app/",
+      githubLink: "https://github.com/GUNAVANTH333/SESD_Project_CineBook",
+      gradient: "from-cyan-500/20 to-purple-500/20",
+      image: "/CineBook.png",
+    },
+    {
+      id: 3,
       title: "CGPA-Analyzer",
       description:
         "A modern, full-stack web application for students to track their academic performance, calculate and predict CGPA, and manage semester grades efficiently.",
@@ -19,19 +62,10 @@ export default function Projects() {
         "Prisma",
         "PostgreSQL",
       ],
-      link: "https://github.com/GUNAVANTH333/CGPA-Analyzer",
+      demoLink: "https://cgpa-analyzer.vercel.app/",
+      githubLink: "https://github.com/GUNAVANTH333/CGPA-Analyzer",
       gradient: "from-cyan-500/20 to-purple-500/20",
       image: "/CGPA-Analyzer.png",
-    },
-    {
-      id: 1,
-      title: "Grow Habit",
-      description:
-        "A simple and intuitive web app for tracking daily habits and managing to-do lists to improve productivity.",
-      tags: ["React", "HTML", "CSS"],
-      link: "https://grow-habit-mu.vercel.app/",
-      gradient: "from-cyan-500/20 to-blue-500/20",
-      image: "/GrowHabit.png",
     },
     {
       id: 4,
@@ -46,19 +80,8 @@ export default function Projects() {
         "Aceternity",
         "Framer Motion",
       ],
-      link: "#",
       gradient: "from-cyan-500/20 to-blue-500/20",
       image: "/Portfolio.png",
-    },
-    {
-      id: 3,
-      title: "Whack-A-Mole",
-      description:
-        "A fast-paced arcade game where players hit popping moles as quickly as possible to score points before time runs out.",
-      tags: ["JavaScript", "HTML", "CSS"],
-      link: "https://whack-a-mole12.netlify.app/",
-      gradient: "from-cyan-500/20 to-purple-500/20",
-      image: "/WhackAMole.png",
     },
   ];
 
@@ -121,18 +144,21 @@ export default function Projects() {
           }}
         >
           {projects.map((project) => (
-            <motion.a
+            <motion.div
               key={project.id}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
+              onClick={() => {
+                const target = project.demoLink || project.githubLink;
+                if (target) {
+                  window.open(target, "_blank", "noopener,noreferrer");
+                }
+              }}
               variants={itemVariants}
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
-              className="group relative flex-shrink-0 w-full md:w-[500px] overflow-hidden rounded-2xl border border-white/10 transition-all duration-300 hover:border-accent/50 snap-center cursor-pointer my-6 interactive"
+              className="group relative flex-shrink-0 w-full md:w-[500px] overflow-hidden rounded-2xl border border-white/10 transition-all duration-300 hover:border-accent/50 snap-center cursor-pointer my-6 interactive flex flex-col"
               onMouseMove={(e) => handleMouseMove(e, project.id)}
               onMouseLeave={handleMouseLeave}
             >
-              <motion.div className="relative h-80 overflow-hidden bg-background/50">
+              <motion.div className="relative h-80 overflow-hidden bg-background/50 flex-shrink-0">
                 <motion.div
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
@@ -150,7 +176,7 @@ export default function Projects() {
                 </motion.div>
               </motion.div>
 
-              <div className="relative p-8 bg-background/80 backdrop-blur-sm overflow-hidden">
+              <div className="relative p-8 bg-background/80 backdrop-blur-sm overflow-hidden flex-1 flex flex-col">
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{
@@ -170,7 +196,7 @@ export default function Projects() {
                   }}
                 />
 
-                <div className="relative z-10">
+                <div className="relative z-10 flex flex-col flex-1">
                   <div className="flex items-start justify-between mb-4">
                     <motion.h3
                       initial={{ opacity: 0 }}
@@ -181,22 +207,54 @@ export default function Projects() {
                     >
                       {project.title}
                     </motion.h3>
-                    <motion.svg
-                      className="w-6 h-6 text-accent flex-shrink-0 transition-transform duration-300"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      initial={{ rotate: 45 }}
-                      animate={{ rotate: hoveredCard === project.id ? 0 : 45 }}
-                      transition={{ duration: 0.1 }}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 7l5 5m0 0l-5 5m5-5H6"
-                      />
-                    </motion.svg>
+                    <div className="flex items-center gap-2 flex-shrink-0">
+                      {project.githubLink && (
+                        <motion.a
+                          href={project.githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.95 }}
+                          aria-label={`${project.title} GitHub repository`}
+                          className="p-2 rounded-full border border-white/10 text-muted-foreground hover:text-accent hover:border-accent/50 transition-colors"
+                        >
+                          <svg
+                            className="w-4 h-4"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                          >
+                            <path d="M12 .5C5.73.5.98 5.24.98 11.52c0 4.94 3.2 9.13 7.65 10.61.56.1.76-.24.76-.54 0-.27-.01-1.16-.02-2.1-3.11.68-3.77-1.32-3.77-1.32-.51-1.3-1.24-1.65-1.24-1.65-1.02-.69.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.71 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.48-.28-5.1-1.24-5.1-5.53 0-1.22.44-2.22 1.15-3-.12-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.3-2.63 5.24-5.13 5.52.4.35.76 1.04.76 2.1 0 1.52-.01 2.74-.01 3.11 0 .3.2.65.77.54A11.03 11.03 0 0 0 23.02 11.5C23.02 5.24 18.27.5 12 .5Z" />
+                          </svg>
+                        </motion.a>
+                      )}
+                      {project.demoLink && (
+                        <motion.a
+                          href={project.demoLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.95 }}
+                          aria-label={`${project.title} live site`}
+                          className="p-2 rounded-full border border-white/10 text-accent hover:border-accent/50 transition-colors"
+                        >
+                          <svg
+                            className="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                            />
+                          </svg>
+                        </motion.a>
+                      )}
+                    </div>
                   </div>
 
                   <motion.p
@@ -210,7 +268,7 @@ export default function Projects() {
                   </motion.p>
 
                   <motion.div
-                    className="flex flex-wrap gap-2"
+                    className="flex flex-wrap gap-2 mt-auto"
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
@@ -232,7 +290,7 @@ export default function Projects() {
                   </motion.div>
                 </div>
               </div>
-            </motion.a>
+            </motion.div>
           ))}
         </motion.div>
 
