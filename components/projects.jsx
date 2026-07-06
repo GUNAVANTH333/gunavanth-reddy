@@ -61,6 +61,7 @@ export default function Projects() {
         "Express",
         "Prisma",
         "PostgreSQL",
+        "Prisma ORM",
       ],
       demoLink: "https://cgpa-analyzer.vercel.app/",
       githubLink: "https://github.com/GUNAVANTH333/CGPA-Analyzer",
